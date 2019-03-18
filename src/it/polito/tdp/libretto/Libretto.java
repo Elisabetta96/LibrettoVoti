@@ -34,5 +34,32 @@ public class Libretto {
     	 voti.add(v);
 		
 	}
-	
+     
+    // public void StampaVoti ( int voto) {}
+     //public String StampVoti2 ( int voto ) {}
+     // la migliore è la 3. Mi serve anche pensando all'interfaccia grafica 
+     //CLASSE CHE gestisce i dati, non le interessa la formattazione. 
+     
+     
+     
+     //sono gli stessi oggetti. Non ho fatto una copia,copio solo il riferimento dell'oggetto gia creato. Non c'è new. Se modifico 
+     //qualcosa nell'oggetto verrà modificato in entrambe le liste 
+     
+     
+     
+     public List <Voto> cercaVoti(int voto){
+    	 List<Voto> result = new ArrayList(); 
+    	  for(Voto v : this.voti) {
+    		  if(v.getPunti()==voto) {
+    			  result.add(v);
+    		  }
+    	  }
+    	  return result;
+    	 
+    	 
+     }
+     
+     
+     
+     
 }
