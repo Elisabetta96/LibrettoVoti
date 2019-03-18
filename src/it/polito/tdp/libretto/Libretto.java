@@ -59,6 +59,21 @@ public class Libretto {
     	 
      }
      
+     // con == controllo se hanno la stessa posizione in memoria 
+     //devo usare equals se voglio vedere che il contenuto sia uguale
+     // == va bene se devo controllare null o due interi 
+     
+     // compareTo ci dice quale viene prima, non sempre due oggetti sono comparabili. 
+     
+     public Voto cercaEsame(String nomeEsame) {
+    	 for(Voto v : this.voti) {
+    		 if(v.getCorso().equals(nomeEsame)) {
+    			 return v;
+    		 }
+    	 }
+    	 return null;
+     }
+     
      
      
      
