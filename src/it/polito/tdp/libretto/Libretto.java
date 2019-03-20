@@ -66,12 +66,50 @@ public class Libretto {
      // compareTo ci dice quale viene prima, non sempre due oggetti sono comparabili. 
      
      public Voto cercaEsame(String nomeEsame) {
-    	 for(Voto v : this.voti) {
-    		 if(v.getCorso().equals(nomeEsame)) {
-    			 return v;
-    		 }
+    	 //for(Voto v : this.voti) {
+    		// if(v.getCorso().equals(nomeEsame)) {
+    		//	 return v;
+    		 //}
+    	 //}
+    	 //return null;
+    	 
+    	 
+    	 Voto voto = new Voto(0,nomeEsame,null);
+    	 int pos= this.voti.indexOf(voto);
+    	 if(pos==1) 
+    		 return null; 
+    	 else return this.voti.get(pos);
+     }
+     
+     
+     
+     /**
+      * Dato un {@link Voto}, determina se esiste gia un voto con uguale punteggio. 
+      * 
+      * @param v
+      * @return {@code true} se ha trovato un corso e punteggio uguali,
+      *         {@code false} se non ha trovato il corso, opp se l'ha trovato con voto diverso. 
+      */
+     public boolean esisteGiaVoto (Voto v ) {
+    	 int pos= this.voti.indexOf(v);
+    	 if(pos==1)
+    		 return false;
+    	 else {
+    		 //if(v.getPunti()==this.voti.get(pos).getPunti())
+    		   // return true;
+    		   // else
+    		    	//return false;
+    		 return v.getPunti()==this.voti.get(pos).getPunti();
     	 }
-    	 return null;
+    	 //Voto trovato = this.cercaEsame(v.getCorso());
+    	 //if(trovato==null)
+    		// return false;
+    	 //if(trovato.getPunti()==v.getPunti()) {
+    		// return false; 
+    	 //}else {
+    		// return false;
+    	 //}
+    	 
      }
      
      
